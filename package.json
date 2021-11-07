@@ -1,0 +1,41 @@
+{
+  "name": "semantic-release-helm",
+  "version": "3.0.0",
+  "description": "Plugin for semantic-release and Helm charts",
+  "main": "index.js",
+  "repository": "https://github.com/m1pl/semantic-release-helm",
+  "author": "Mihai Plasoianu <mihai@plasoianu.de>",
+  "license": "MIT",
+  "dependencies": {
+    "aggregate-error": "4.0.0",
+    "js-yaml": "4.1.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "1.0.2",
+    "@types/jest": "27.5.0",
+    "@types/js-yaml": "4.0.5",
+    "@types/semantic-release": "17.2.3",
+    "@types/semver": "7.3.9",
+    "@typescript-eslint/eslint-plugin": "5.22.0",
+    "@typescript-eslint/parser": "5.22.0",
+    "eslint": "8.14.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "husky": "7.0.4",
+    "jest": "28.0.3",
+    "jest-mock-extended": "2.0.5",
+    "prettier": "2.6.2",
+    "ts-jest": "28.0.1",
+    "typescript": "4.6.4"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "format": "prettier **/*.{ts,json} --check",
+    "format:fix": "prettier **/*.{ts,json} --write",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "build": "yarn tsc",
+    "test": "jest"
+  }
+}
