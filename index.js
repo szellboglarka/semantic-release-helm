@@ -12,7 +12,7 @@ async function verifyConditions(pluginConfig, context) {
 
 async function prepare(pluginConfig, context) {
     if (!verified) {
-        await verifyChart(pluginConfig, context);
+        await verifyConditions(pluginConfig, context);
     }
 
     await prepareChart(pluginConfig, context);
@@ -21,10 +21,10 @@ async function prepare(pluginConfig, context) {
 
 async function publish(pluginConfig, context) {
     if (!verified) {
-        await verifyChart(pluginConfig, context);
+        await verifyConditions(pluginConfig, context);
     }
     if (!prepared) {
-        await prepareChart(pluginConfig, context);
+        await prepare(pluginConfig, context);
     }
 
     await publishChart(pluginConfig, context);
